@@ -1,1 +1,35 @@
-<p>list-guest works!</p>
+<!-- <p>list-guest works!</p> -->
+<div>
+    <div>
+        <button>Home</button>
+        <button>Add New Guest</button>
+    </div>
+    <div>
+        <ng-container *ngIf="guests.length===0">
+            <p><strong> No Guest Found</strong></p>
+        </ng-container>
+
+
+        <ng-container *ngIf="guests && guests.length>0">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Guest Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let guest of guests">
+                    <td>{{guest.id}}</td>
+                    <td>{{guest.guestName}}</td>
+                    <td>
+                        <button>Edit</button>&nbsp;
+                        <button>Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+    </div>
+</div>

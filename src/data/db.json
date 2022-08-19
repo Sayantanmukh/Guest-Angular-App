@@ -2,16 +2,16 @@
   "guests": [
     {
       "id": 1,
-      "title": "Sachin"
+      "guestName": "Sachin"
       
     },
     {
       "id": 2,
-      "title": "Virat"
+      "guestName": "Virat"
     },
     {
       "id": 3,
-      "title": "Rahul"
+      "guestName": "Rahul"
     }
   ]
   

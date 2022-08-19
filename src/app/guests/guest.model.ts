@@ -1,5 +1,5 @@
 export interface guestDTO{
-    guestId:number;
+    id:number;
     guestName:string;
 }
 
