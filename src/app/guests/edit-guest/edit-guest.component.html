@@ -1,2 +1,2 @@
 <h2>Update Guest Details</h2>
-<app-form-guest></app-form-guest>
+<app-form-guest *ngIf="model" [model]="model" (guestEvent)="saveChanges($event)"></app-form-guest>

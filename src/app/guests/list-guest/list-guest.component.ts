@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { guestDTO } from '../guest.model';
 import { GuestService } from '../guest.service';
 
@@ -12,7 +13,7 @@ export class ListGuestComponent implements OnInit {
 
   guests:guestDTO[];
 
-  constructor(private guestService:GuestService) {
+  constructor(private guestService:GuestService, private router:Router) {
     this.guests=[];
    }
 
@@ -26,7 +27,21 @@ export class ListGuestComponent implements OnInit {
     this.guestService.getAllGuests().subscribe((guestList:guestDTO[])=>{
       this.guests=guestList;
     })
-    }
+  }
+
+  navigateToHome(){
+    this.router.navigate(['/'])
+  }
+
+  navigateToAddGuest(){
+    this.router.navigate(['/guests/create'])
+  }
+
+  deleteGuest(id:number){
+    this.guestService.deleteGuest(id).subscribe(()=>{
+    this.loadGuests();}
+    )
+  }
   
 
 }

@@ -1,11 +1,12 @@
 <!-- <p>list-guest works!</p> -->
 <div>
     <div>
-        <button>Home</button>
-        <button>Add New Guest</button>
+        <button (click)="navigateToHome()">Home</button>
+        <button (click)="navigateToAddGuest()">Add New Guest</button>
     </div>
+    <br>
     <div>
-        <ng-container *ngIf="guests.length===0">
+        <ng-container *ngIf="guests.length ==0">
             <p><strong> No Guest Found</strong></p>
         </ng-container>
 
@@ -24,8 +25,8 @@
                     <td>{{guest.id}}</td>
                     <td>{{guest.guestName}}</td>
                     <td>
-                        <button>Edit</button>&nbsp;
-                        <button>Delete</button>
+                        <button routerLink="/guests/edit/{{ guest.id }}">Edit</button>&nbsp;
+                        <button (click)="deleteGuest(guest.id)">Delete</button>
                     </td>
                 </tr>
             </tbody>
